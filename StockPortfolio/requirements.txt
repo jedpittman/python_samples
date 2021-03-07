@@ -1,0 +1,6 @@
+pandas
+numpy
+requests
+pyportfolioopt
+pandas-datareader
+quandl

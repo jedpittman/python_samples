@@ -1,0 +1,20 @@
+Note these apis will undoubtedly have their own rules.
+Be sure to evaluate these before systematically using them.
+None of these really worked for me. I ended up creating a fake file with a date column and fake tickers across the top.
+
+
+https://www.marketwatch.com/investing/stock/ko/downloaddatapartial?startdate=02/03/2021%2000:00:00&enddate=03/05/2021%2023:59:59&daterange=d30&frequency=p1d&csvdownload=true&downloadpartial=false&newdates=false
+
+
+https://stock-price-checker-proxy.freecodecamp.rocks/v1/stock/MSFT/quote
+
+https://www.nasdaq.com/market-activity/stocks/crm/historical
+
+https://api.nasdaq.com/api/quote/MSFT/historical?assetclass=stocks&fromdate=2011-03-06&limit=9999&todate=2021-03-06
+
+Full download:
+https://www.kaggle.com/jacksoncrow/stock-market-dataset
+https://datahub.io/collections/stock-market-data#sp-500-companies
+
+https://www.stock-data-solutions.com/kb/how-to-load-historical-prices-from-google-finance-to-csv.htm
+
