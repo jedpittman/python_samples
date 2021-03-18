@@ -1,0 +1,51 @@
+https://jupyter-docker-stacks.readthedocs.io/en/latest/using/specifics.html#apache-spark
+https://hub.docker.com/r/jupyter/all-spark-notebook
+
+Start the notebook once docker is running:
+docker run -p 8888:8888 jupyter/all-spark-notebook
+
+
+from pyspark.sql import SparkSession
+
+# Spark session & context
+spark = SparkSession.builder.master('local').getOrCreate()
+sc = spark.sparkContext
+
+rdd1=sc.parallelize(sc.getConf().getAll())
+rdd2=rdd1 \
+.map(lambda a: (a[0],a[1])) \
+.keys() \
+.map(lambda b: b.replace('spark.','')) \
+.flatMap(lambda x: x.split('.')) \
+.map(lambda a: (a,1)) 
+
+
+
+import os
+os.listdir("/var/log")
+#help(os.listdir)
+with open("/var/log/bootstrap.log", "r") as f:
+    for line in f:
+        print(line)
+#    print('try')
+#    dir(f)
+#    x = f.readlines()
+#    type(x)
+
+
+import pyspark.sql.functions as F
+from operator import add
+#from pyspark.sql.functions import add
+#rdd3=rdd2.foldByKey(0, add).sortBy(lambda x: x[1])
+rdd3.collect()
+
+
+from pyspark.sql import Row
+rdd1=sc.parallelize(sc.getConf().getAll())
+rdd2 = rdd1.map(lambda l: Row(name=l[0], value=l[1]))
+#df.selectExpr("length(name) as lname").collect()
+df.write.saveAsTable('mytable')
+df2 = spark.table('mytable')
+df2.head()
+#spark.sql('show databases').collect()
+spark.sql('show tables in default').collect()
