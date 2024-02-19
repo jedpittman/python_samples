@@ -23,17 +23,14 @@ https://chocolatey.org/packages/Graphviz
 Setup a virtual environment to run the samples:
 `
 python -m venv diagramvenv
-`
 
 Navigate to the environment and activate it. 
 Do a pip install to get the dependencies. 
-
 `
 pip install -r requirements.txt
 `
 
 Then do a standard run of the samples and the pngs are in the folder.
-
 `
 python sample1.py
 `
