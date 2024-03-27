@@ -1,4 +1,4 @@
-
+"""minor bit of code that given the input should return the second to lowest score in the list of students."""
 
 
 if __name__ == '__main__':
@@ -9,8 +9,8 @@ if __name__ == '__main__':
             score = float(f.readline().strip())
             #print(name, score)
             students.append([name, score])
-    max_score = max([s[1] for s in students])
-    second_max = max(s[1] for s in students if s[1] != max_score)
-    second_names = sorted([s[0] for s in students if s[1] == second_max])
+    min_score = min([s[1] for s in students])
+    second_min = min(s[1] for s in students if s[1] != min_score)
+    second_names = sorted([s[0] for s in students if s[1] == second_min])
     for n in second_names:
         print(n)    
